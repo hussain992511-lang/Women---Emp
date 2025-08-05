@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منظمة تنمية المرأة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Cairo',sans-serif;background:#fff;color:#333;}
+a{text-decoration:none;color:inherit;}
+header{background:#fff;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);position:sticky;top:0;z-index:1000;}
+.logo{font-size:26px;font-weight:bold;background:linear-gradient(90deg,#6a00f4,#f04e98);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+nav ul{display:flex;gap:20px;list-style:none;}
+nav a{font-weight:bold;transition:0.3s;}
+nav a:hover{color:#f04e98;}
+.donate-btn{background:#f04e98;color:#fff!important;padding:10px 20px;border-radius:5px;}
+.menu-toggle{display:none;}
+.hero{background:url('https://images.unsplash.com/photo-1592595896551-12d4cdb2b9e0') center/cover no-repeat;
+color:#fff;text-align:center;padding:140px 20px;position:relative;}
+.hero::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);}
+.hero-content{position:relative;z-index:2;}
+.hero h1{font-size:40px;margin-bottom:10px;}
+.hero p{font-size:20px;margin-bottom:25px;}
+.btn-primary{display:inline-block;background:#f04e98;color:#fff;padding:14px 30px;border-radius:8px;font-weight:bold;font-size:18px;}
+section{padding:60px 20px;text-align:center;}
+h2{margin-bottom:20px;color:#6a00f4;font-size:28px;}
+p{max-width:800px;margin:auto;margin-bottom:20px;font-size:18px;}
+.cards{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);
+width:280px;transition:0.3s;text-align:center;}
+.card img{width:100%;border-radius:10px;height:180px;object-fit:cover;margin-bottom:10px;}
+.card:hover{transform:translateY(-5px);}
+.card i{font-size:36px;color:#6a00f4;margin-bottom:10px;}
+.page{display:none;animation:fadeIn 0.6s;}
+.active{display:block;}
+.back-btn{display:inline-block;margin-top:20px;background:#6a00f4;color:#fff;padding:10px 20px;border-radius:6px;}
+footer{background:#f2f2f2;text-align:center;padding:20px;margin-top:20px;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@media(max-width:768px){
+nav ul{flex-direction:column;display:none;background:#fff;position:absolute;top:70px;right:10px;
+padding:20px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+nav ul.active{display:flex;}
+.menu-toggle{display:block;cursor:pointer;font-size:26px;color:#6a00f4;}
+.hero h1{font-size:28px;}
+.hero p{font-size:16px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">تنمية المرأة</div>
+    <div class="menu-toggle">☰</div>
+    <nav>
+        <ul>
+            <li><a href="#home" class="nav-link" data-target="home">الرئيسية</a></li>
+            <li><a href="#programs" class="nav-link" data-target="home">برامجنا</a></li>
+            <li><a href="#donate" class="nav-link" data-target="home">تبرع</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div id="home" class="page active">
+<section class="hero">
+    <div class="hero-content">
+        <h1>تمكين المرأة لمستقبل أفضل</h1>
+        <p>نقدم الدعم النفسي، التعليم، وفرص العمل لنساء المجتمع.</p>
+        <a href="#donate" class="btn-primary">تبرع الآن</a>
+    </div>
+</section>
+
+<section id="programs">
+    <h2>برامجنا</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" alt="الدعم النفسي">
+            <h3><i class="fas fa-heart"></i> الدعم النفسي</h3>
+            <button onclick="showPage('support')" class="btn-primary" style="margin-top:10px;">المزيد</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1581091012184-5c7b09f2528c" alt="التعليم والتدريب">
+            <h3><i class="fas fa-book"></i> التعليم والتدريب</h3>
+            <button onclick="showPage('training')" class="btn-primary" style="margin-top:10px;">المزيد</button>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb" alt="التوظيف">
+            <h3><i class="fas fa-briefcase"></i> التوظيف</h3>
+            <button onclick="showPage('employment')" class="btn-primary" style="margin-top:10px;">المزيد</button>
+        </div>
+    </div>
+</section>
+
+<section id="donate">
+    <h2>تبرع الآن</h2>
+    <form>
+        <input type="text" placeholder="الاسم" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="number" placeholder="المبلغ" required>
+        <button type="submit">تبرع</button>
+    </form>
+</section>
+</div>
+
+<!-- صفحات داخلية -->
+<div id="support" class="page">
+    <h2>برنامج الدعم النفسي</h2>
+    <p>نوفر جلسات دعم نفسي ومجموعات علاجية للنساء للتغلب على التحديات.</p>
+    <img src="https://images.unsplash.com/photo-1605379399843-5870eea9b7ab" style="width:80%;max-width:600px;border-radius:10px;margin-top:20px;">
+    <br>
+    <a href="#" onclick="showPage('home')" class="back-btn">رجوع</a>
+</div>
+
+<div id="training" class="page">
+    <h2>برنامج التعليم والتدريب</h2>
+    <p>ندرب النساء في مجالات التكنولوجيا وريادة الأعمال لفتح آفاق جديدة.</p>
+    <img src="https://images.unsplash.com/photo-1581091215360-7b3c7bb73e55" style="width:80%;max-width:600px;border-radius:10px;margin-top:20px;">
+    <br>
+    <a href="#" onclick="showPage('home')" class="back-btn">رجوع</a>
+</div>
+
+<div id="employment" class="page">
+    <h2>برنامج التوظيف</h2>
+    <p>نعمل على توفير فرص عمل وربط النساء بسوق العمل.</p>
+    <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64" style="width:80%;max-width:600px;border-radius:10px;margin-top:20px;">
+    <br>
+    <a href="#" onclick="showPage('home')" class="back-btn">رجوع</a>
+</div>
+
+<footer>
+    <p>© 2025 جميع الحقوق محفوظة - منظمة تنمية المرأة</p>
+</footer>
+
+<script>
+function showPage(pageId){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelector('.menu-toggle').addEventListener('click',()=>{
+    document.querySelector('nav ul').classList.toggle('active');
+});
+const donateForm=document.querySelector('form');
+donateForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    alert('شكراً لتبرعك!');
+    donateForm.reset();
+});
+</script>
+
+</body>
+</html>
